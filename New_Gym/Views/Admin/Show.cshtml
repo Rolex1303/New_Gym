@@ -1,0 +1,198 @@
+﻿@model IEnumerable<New_Gym.Models.Product>
+@{
+    ViewBag.Title = "Show";
+}
+
+<html class="no-js" lang="zxx">
+
+<body>
+    <!--? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="/assets/img/logo/loder.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!--? Hero Start -->
+        <div class="slider-area2">
+            <div class="slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap hero-cap2 pt-70">
+                                <h2>Show Product Details</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
+        <!--?  Contact Area start  -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="contact-title">Show Product Details</h2>
+                    </div>
+                    <div class="col-lg-8">
+
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Duration</th>
+                                    <th>Price</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th>@item.PId</th>
+                                        <th>@item.PDuration</th>
+                                        <th>@item.PPrice</th>
+                                        <th><a href="/Admin/Edit/@item.PId">Edit</a></th>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-home"></i></span>
+                            <div class="media-body">
+                                <h3>Btps, India.</h3>
+                                <p>Kanpur, UP 91770</p>
+                            </div>
+                        </div>
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+                            <div class="media-body">
+                                <h3>+91 9696911757</h3>
+                                <p>Mon to Fri 9am to 6pm</p>
+                            </div>
+                        </div>
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-email"></i></span>
+                            <div class="media-body">
+                                <h3>support@Rolex.com</h3>
+                                <p>Send us your query anytime!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Area End -->
+        <!-- ? services-area -->
+        <section class="services-area">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+                        <div class="single-services mb-40">
+                            <div class="features-icon">
+                                <img src="/assets/img/icon/icon1.svg" alt="">
+                            </div>
+                            <div class="features-caption">
+                                <h3>Location</h3>
+                                <p>You’ll look at graphs and charts in Task One, how to approach </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+                        <div class="single-services mb-40">
+                            <div class="features-icon">
+                                <img src="/assets/img/icon/icon2.svg" alt="">
+                            </div>
+                            <div class="features-caption">
+                                <h3>Phone</h3>
+                                <p>(+91) 9696911757</p>
+                                <p>  (+91) 9696911757</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+                        <div class="single-services mb-40">
+                            <div class="features-icon">
+                                <img src="/assets/img/icon/icon3.svg" alt="">
+                            </div>
+                            <div class="features-caption">
+                                <h3>Email</h3>
+                                <p>rolex@gmail.com</p>
+                                <p>contact56@Rolex.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--? Footer Start-->
+    <footer>
+        <div class="footer-area black-bg">
+            <div class="container">
+                <div class="footer-top footer-padding">
+                    <!-- Footer Menu -->
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="single-footer-caption mb-50 text-center">
+                                <!-- logo -->
+                                <div class="footer-logo wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                                    <a href="index.html"><img src="/assets/img/logo/logo2_footer.png" alt=""></a>
+                                </div>
+                                <!-- Menu -->
+                                <!-- Header Start -->
+                                <div class="header-area main-header2 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">
+                                    <div class="main-header main-header2">
+                                        <div class="menu-wrapper menu-wrapper2">
+                                            <!-- Main-menu -->
+                                            <div class="main-menu main-menu2 text-center">
+                                                <nav>
+                                                    <ul>
+                                                        <li><a href="index.html">Home</a></li>
+                                                        <li><a href="about.html">About</a></li>
+                                                        <li><a href="courses.html">Courses</a></li>
+                                                        <li><a href="pricing.html">Pricing</a></li>
+                                                        <li><a href="gallery.html">Gallery</a></li>
+                                                        <li><a href="contact.html">Contact</a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Header End -->
+                        <!-- social -->
+                        <div class="footer-social mt-30 wow fadeInUp" data-wow-duration="3s" data-wow-delay=".8s">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+</html>
+

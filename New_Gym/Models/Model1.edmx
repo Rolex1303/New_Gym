@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="New_GymModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="PId" />
+          </Key>
+          <Property Name="PId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PDuration" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PPrice" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PDesc" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Purchase">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="uid" Type="int" />
+          <Property Name="pid" Type="int" />
+          <Property Name="orderId" Type="varchar" MaxLength="50" />
+          <Property Name="payId" Type="varchar" MaxLength="98" />
+          <Property Name="checksum" Type="text" />
+          <Property Name="date" Type="date" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Record">
+          <Key>
+            <PropertyRef Name="RId" />
+          </Key>
+          <Property Name="RId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UId" Type="int" />
+          <Property Name="PId" Type="int" />
+          <Property Name="RDate" Type="date" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UId" />
+          </Key>
+          <Property Name="UId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UEmail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UPassword" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="New_GymModelStoreContainer">
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Purchase" EntityType="Self.Purchase" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Record" EntityType="Self.Record" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="New_GymModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="PId" />
+          </Key>
+          <Property Name="PId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PDuration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Purchase">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="pid" Type="Int32" />
+          <Property Name="orderId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="payId" Type="String" MaxLength="98" FixedLength="false" Unicode="false" />
+          <Property Name="checksum" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Record">
+          <Key>
+            <PropertyRef Name="RId" />
+          </Key>
+          <Property Name="RId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UId" Type="Int32" />
+          <Property Name="PId" Type="Int32" />
+          <Property Name="RDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UId" />
+          </Key>
+          <Property Name="UId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="New_GymEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Purchases" EntityType="Self.Purchase" />
+          <EntitySet Name="Records" EntityType="Self.Record" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="New_GymModelStoreContainer" CdmEntityContainer="New_GymEntities">
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="New_GymModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="PId" ColumnName="PId" />
+                <ScalarProperty Name="PDuration" ColumnName="PDuration" />
+                <ScalarProperty Name="PPrice" ColumnName="PPrice" />
+                <ScalarProperty Name="PDesc" ColumnName="PDesc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Purchases">
+            <EntityTypeMapping TypeName="New_GymModel.Purchase">
+              <MappingFragment StoreEntitySet="Purchase">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="orderId" ColumnName="orderId" />
+                <ScalarProperty Name="payId" ColumnName="payId" />
+                <ScalarProperty Name="checksum" ColumnName="checksum" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Records">
+            <EntityTypeMapping TypeName="New_GymModel.Record">
+              <MappingFragment StoreEntitySet="Record">
+                <ScalarProperty Name="RId" ColumnName="RId" />
+                <ScalarProperty Name="UId" ColumnName="UId" />
+                <ScalarProperty Name="PId" ColumnName="PId" />
+                <ScalarProperty Name="RDate" ColumnName="RDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="New_GymModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UId" ColumnName="UId" />
+                <ScalarProperty Name="UName" ColumnName="UName" />
+                <ScalarProperty Name="UEmail" ColumnName="UEmail" />
+                <ScalarProperty Name="UPassword" ColumnName="UPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

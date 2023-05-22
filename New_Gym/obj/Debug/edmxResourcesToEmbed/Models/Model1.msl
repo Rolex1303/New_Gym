@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="New_GymModelStoreContainer" CdmEntityContainer="New_GymEntities">
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="New_GymModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="PId" ColumnName="PId" />
+          <ScalarProperty Name="PDuration" ColumnName="PDuration" />
+          <ScalarProperty Name="PPrice" ColumnName="PPrice" />
+          <ScalarProperty Name="PDesc" ColumnName="PDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchases">
+      <EntityTypeMapping TypeName="New_GymModel.Purchase">
+        <MappingFragment StoreEntitySet="Purchase">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="orderId" ColumnName="orderId" />
+          <ScalarProperty Name="payId" ColumnName="payId" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Records">
+      <EntityTypeMapping TypeName="New_GymModel.Record">
+        <MappingFragment StoreEntitySet="Record">
+          <ScalarProperty Name="RId" ColumnName="RId" />
+          <ScalarProperty Name="UId" ColumnName="UId" />
+          <ScalarProperty Name="PId" ColumnName="PId" />
+          <ScalarProperty Name="RDate" ColumnName="RDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="New_GymModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UId" ColumnName="UId" />
+          <ScalarProperty Name="UName" ColumnName="UName" />
+          <ScalarProperty Name="UEmail" ColumnName="UEmail" />
+          <ScalarProperty Name="UPassword" ColumnName="UPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

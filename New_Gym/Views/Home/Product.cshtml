@@ -1,0 +1,114 @@
+﻿@model New_Gym.Models.Product
+
+<body class="black-bg">
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="/assets/img/logo/loder.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+
+    <main>
+        <!--? Hero Start -->
+        <div class="slider-area2">
+            <div class="slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap hero-cap2 pt-70">
+                                <h2>Product</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
+        <!-- Courses area start -->
+        <section class="pricing-area section-padding30 fix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="section-tittle text-center mb-55">
+                            <h2>Product</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="properties mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                            <div class="properties__card">
+                                <div class="about-icon">
+                                    <img src="/assets/img/icon/price.svg" alt="">
+                                </div>
+                                <div class="properties__caption">
+                                    <span class="month">@Model.PDuration</span>
+                                    <p class="mb-25">@Model.PPrice<span>Single Classes</span> </p> <br />
+                                    <p>@Model.PDesc</p>
+
+                                </div>
+
+                                <a class="btn btn-outline-success" href="/Home/Buy/@Model.PId">Subscribe Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Cour
+        <!-- ? services-area -->
+        <section class="services-area">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+                        <div class="single-services mb-40">
+                            <div class="features-icon">
+                                <img src="/assets/img/icon/icon1.svg" alt="">
+                            </div>
+                            <div class="features-caption">
+                                <h3>Location</h3>
+                                <p>You’ll look at graphs and charts in Task One, how to approach </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+                        <div class="single-services mb-40">
+                            <div class="features-icon">
+                                <img src="/assets/img/icon/icon2.svg" alt="">
+                            </div>
+                            <div class="features-caption">
+                                <h3>Phone</h3>
+                                <p>(+91) 9696911757</p>
+                                <p>  (+91) 9696911757</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+                        <div class="single-services mb-40">
+                            <div class="features-icon">
+                                <img src="/assets/img/icon/icon3.svg" alt="">
+                            </div>
+                            <div class="features-caption">
+                                <h3>Email</h3>
+                                <p>(+91) 9696911757</p>
+                                <p>  (+91) 9696911757</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    </body>
